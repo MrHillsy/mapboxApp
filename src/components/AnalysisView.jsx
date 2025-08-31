@@ -13,7 +13,7 @@ import {
 const AnalysisView = () => {
   const chartRefs = useRef({});
 
-  // Stratified sampling: 0.1% of real-time data for each facility in each borough
+  // Stratified sampling: 2.5% of real-time data for each facility in each borough
   // Based on approximate real NYC data ratios
   const realDataEstimates = {
     Brooklyn: { schools: 685, supermarkets: 1240, police: 23, parks: 532 },
@@ -21,7 +21,7 @@ const AnalysisView = () => {
     Manhattan: { schools: 287, supermarkets: 645, police: 22, parks: 156 }
   };
 
-  // Generate stratified sample (0.1% of each category per borough)
+  // Generate stratified sample (2.5% of each category per borough)
   const generateStratifiedSample = () => {
     const features = [];
     const boroughCoordinates = {
@@ -319,7 +319,7 @@ const AnalysisView = () => {
         <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
           <h3 className="text-lg font-semibold text-blue-800 mb-3">Stratified Sampling Insights</h3>
           <div className="space-y-2 text-blue-700">
-            <p>• <strong>Stratified Approach:</strong> Each facility type is sampled at exactly 0.1% rate within each borough</p>
+            <p>• <strong>Stratified Approach:</strong> Each facility type is sampled at exactly 2.5% rate within each borough</p>
             <p>• <strong>Proportional Representation:</strong> Sample maintains the same distribution ratios as real data</p>
             <p>• <strong>Brooklyn Dominance:</strong> Has the highest concentration of most amenities, especially supermarkets</p>
             <p>• <strong>Efficient Visualization:</strong> Reduced data points while preserving statistical relationships</p>
